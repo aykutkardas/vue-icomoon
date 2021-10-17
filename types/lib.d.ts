@@ -16,4 +16,15 @@ export declare const Icomoon: {
   };
 };
 
-export declare const iconList: (iconSet: Record<any, any>) => string[] | null;
+declare interface IconSetItem {
+  properties: {
+    name: string;
+  };
+  icon: { paths: string[]; attrs: Object[]; width?: number | string };
+}
+
+declare interface IconSet {
+  icons: IconSetItem[];
+}
+
+export declare const iconList: (iconSet: IconSet) => string[] | null;
