@@ -7,6 +7,9 @@
 
 With vue-icomoon you can easily use the icons you have selected or created in icomoon.
 
+
+## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z)
+
 ## Install
 
 ```
@@ -21,7 +24,55 @@ https://icomoon.io/app/
 
 ### Declare
 
-> Coming Soon...
+Icon.vue
+
+```html
+<template>
+  <icomoon :iconSet="iconSet" v-bind="props" />
+</template>
+
+<script>
+  import { Icomoon } from "vue-icomoon";
+  import iconSet from "./selection.json";
+
+  export default {
+    name: "Icon",
+    components: {
+      Icomoon,
+    },
+    props: {
+      icon: {
+        type: String,
+        required: true,
+      },
+    },
+    setup(props) {
+      return {
+        props,
+        iconSet,
+      };
+    },
+  };
+</script>
+```
+
+### Use
+
+```html
+<template>
+  <icon icon="camera" :size="50" color="#5096ec" />
+</template>
+
+<script>
+import Icon from "./components/Icon/Icon.vue";
+
+export default {
+  components: {
+    Icon,
+  },
+};
+</script>
+```
 
 ## iconList
 
