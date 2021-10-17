@@ -1,0 +1,45 @@
+{
+  "name": "vue-icomoon",
+  "description": "It allows you to simply view the icons in the selection.json file provided by Icomoon.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Aykut Kardaş",
+    "email": "aykutkrds@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "bugs": {
+    "url": "https://github.com/aykutkardas/vue-icomoon/issues"
+  },
+  "homepage": "https://github.com/aykutkardas/vue-icomoon#readme",
+  "main": "./dist/vue-icomoon.umd.js",
+  "module": "./dist/vue-icomoon.es.js",
+  "exports": {
+    ".": {
+      "require": "./dist/vue-icomoon.umd.js",
+      "import": "./dist/vue-icomoon.es.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aykutkardas/vue-icomoon.git"
+  },
+  "keywords": [
+    "Vue",
+    "Vue3",
+    "IcoMoon",
+    "SVG",
+    "Icon"
+  ],
+  "peerDependencies": {
+    "vue": "3.2.20"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "vite": "^2.6.4"
+  }
+}
