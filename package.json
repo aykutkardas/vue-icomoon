@@ -18,6 +18,7 @@
   "homepage": "https://github.com/aykutkardas/vue-icomoon#readme",
   "main": "./dist/vue-icomoon.umd.js",
   "module": "./dist/vue-icomoon.es.js",
+  "types": "./types/lib.d.ts",
   "exports": {
     ".": {
       "require": "./dist/vue-icomoon.umd.js",
