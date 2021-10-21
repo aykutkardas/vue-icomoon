@@ -74,6 +74,30 @@ export default {
 </script>
 ```
 
+
+## Props List
+
+| Name              | Type          | Default   | Sample                        |
+| ----------------- | ------------- | --------- | ----------------------------- |
+| iconSet           | Object        | undefined | "selection.json file content" |
+| icon              | String        | undefined | "home"                        |
+| size              | Number,String | undefined | "1em", 10, "100px"            |
+| color             | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
+| style             | Object        | {...}     | { color: '#ff0'}              |
+| className         | String        | undefined | "icomoon"                     |
+| disableFill       | Boolean       | undefined | true                          |
+| removeInitialStyle | Boolean       | undefined | true                          |
+
+### Initial Style
+
+```js
+{
+  display: "inline-block",
+  stroke: "currentColor",
+  fill: "currentColor",
+}
+```
+
 ## iconList
 
 You can use the iconList method to see a complete list of icons you can use.
