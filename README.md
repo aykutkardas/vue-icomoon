@@ -7,7 +7,6 @@
 
 With vue-icomoon you can easily use the icons you have selected or created in icomoon.
 
-
 ## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z)
 
 ## Install
@@ -64,15 +63,29 @@ Icon.vue
 </template>
 
 <script>
-import Icon from "./components/Icon/Icon.vue";
+  import Icon from "./components/Icon/Icon.vue";
 
-export default {
-  components: {
-    Icon,
-  },
-};
+  export default {
+    components: {
+      Icon,
+    },
+  };
 </script>
 ```
+
+## Props List
+
+| Name               | Type          | Default   | Sample                        |
+| ------------------ | ------------- | --------- | ----------------------------- |
+| iconSet            | Object        | undefined | "selection.json file content" |
+| icon               | String        | undefined | "home"                        |
+| size               | Number,String | undefined | "1em", 10, "100px"            |
+| color              | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
+| style              | Object        | {...}     | { color: '#ff0'}              |
+| title              | String        | undefined | "Icon Title"                  |
+| class              | String        | undefined | "icomoon"                     |
+| disableFill        | Boolean       | undefined | true                          |
+| removeInitialStyle | Boolean       | undefined | true                          |
 
 ## iconList
 
