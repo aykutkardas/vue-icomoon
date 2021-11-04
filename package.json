@@ -1,7 +1,7 @@
 {
   "name": "vue-icomoon",
   "description": "It allows you to simply view the icons in the selection.json file provided by Icomoon.",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "author": {
     "name": "Aykut Kardaş",
     "email": "aykutkrds@gmail.com"
