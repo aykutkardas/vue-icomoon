@@ -1,6 +1,7 @@
 <template>
   <svg :viewBox="viewBox" :style="style" v-bind="svgProps">
     <path v-for="(path, index) in paths" :d="path.d" />
+    <title v-if="title">{{ title }}</title>
   </svg>
 </template>
 
