@@ -17,6 +17,10 @@ export default {
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      default: null,
+    },
     color: {
       type: String,
       default: "",
