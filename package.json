@@ -37,7 +37,7 @@
     "Icon"
   ],
   "peerDependencies": {
-    "vue": "^3.2.0"
+    "vue": "^3.2.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
