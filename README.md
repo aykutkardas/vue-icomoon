@@ -1,4 +1,4 @@
-# vue-icomoon
+![Vue-Icomoon Logo](/banner.png)
 
 [![npm](https://img.shields.io/npm/v/vue-icomoon?color=%234fc921)](https://www.npmjs.com/package/vue-icomoon)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
