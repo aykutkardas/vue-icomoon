@@ -5,7 +5,7 @@
 
 **📦 Zero Dependencies**
 
-With vue-icomoon you can easily use the icons you have selected or created in icomoon.
+It makes it very simple to use SVG icons in your `Vue3` projects.
 
 ## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z)
 
@@ -40,7 +40,7 @@ Icon.vue
       Icomoon,
     },
     props: {
-      icon: {
+      name: {
         type: String,
         required: true,
       },
@@ -59,7 +59,7 @@ Icon.vue
 
 ```html
 <template>
-  <icon icon="camera" :size="50" color="#5096ec" />
+  <icon name="camera" :size="50" color="#5096ec" />
 </template>
 
 <script>
@@ -78,7 +78,7 @@ Icon.vue
 | Name               | Type          | Default   | Sample                        |
 | ------------------ | ------------- | --------- | ----------------------------- |
 | iconSet            | Object        | undefined | "selection.json file content" |
-| icon               | String        | undefined | "home"                        |
+| name               | String        | undefined | "home"                        |
 | size               | Number,String | undefined | "1em", 10, "100px"            |
 | color              | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
 | style              | Object        | {...}     | { color: '#ff0'}              |

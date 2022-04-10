@@ -15,6 +15,10 @@ export default {
     },
     icon: {
       type: String,
+      default: null,
+    },
+    name: {
+      type: String,
       required: true,
     },
     title: {
@@ -45,6 +49,7 @@ export default {
   setup({
     iconSet,
     icon,
+    name,
     size,
     title,
     disableFill,
@@ -57,8 +62,10 @@ export default {
       fill: "currentColor",
     };
 
+    const iconName = icon || name;
+
     const currentIcon = iconSet.icons.find(
-      (item) => item.properties.name === icon
+      (item) => item.properties.name === iconName
     );
 
     if (!currentIcon) return {};
