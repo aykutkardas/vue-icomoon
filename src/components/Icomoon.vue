@@ -1,21 +1,19 @@
 <template>
-  <svg v-if="currentIcon" :viewBox="viewBox" :style="style" v-bind="svgProps">
-    <path v-for="path in paths" :d="path.d" />
+  <svg v-if="iconData" :viewBox="iconData.viewBox" :style="iconData.style">
+    <path v-for="path in iconData.paths" :key="path.key" :d="path.d" />
     <title v-if="title">{{ title }}</title>
   </svg>
 </template>
 
 <script>
+import { getComputedSvgData } from "compute-svg-data";
+
 export default {
   name: "Icomoon",
   props: {
     iconSet: {
       type: Object,
       required: true,
-    },
-    icon: {
-      type: String,
-      default: null,
     },
     name: {
       type: String,
@@ -24,10 +22,6 @@ export default {
     title: {
       type: String,
       default: null,
-    },
-    color: {
-      type: String,
-      default: "",
     },
     size: {
       type: Number,
@@ -46,61 +40,12 @@ export default {
       default: {},
     },
   },
-  setup({
-    iconSet,
-    icon,
-    name,
-    size,
-    title,
-    disableFill,
-    removeInitialStyle,
-    ...svgProps
-  }) {
-    const initialStyle = {
-      display: "inline-block",
-      stroke: "currentColor",
-      fill: "currentColor",
-    };
+  setup(props) {
+    const iconData = getComputedSvgData(props.iconSet, props.name, props);
 
-    const iconName = icon || name;
+    if (!iconData) return {};
 
-    const currentIcon = iconSet.icons.find(
-      (item) => item.properties.name === iconName
-    );
-
-    if (!currentIcon) return {};
-
-    const { width = "1024" } = currentIcon.icon;
-    
-    const viewBox = `0 0 ${width} 1024`;
-
-    const style = {
-      ...(removeInitialStyle ? {} : initialStyle),
-    };
-
-    if (size) {
-      style.width = size;
-      style.height = size;
-    }
-
-    const paths = currentIcon.icon.paths.map((path, index) => {
-      const attrs = currentIcon.icon.attrs?.[index];
-
-      const pathProps = {
-        d: path,
-        ...(!disableFill && attrs ? attrs : {}),
-      };
-
-      return pathProps;
-    });
-
-    return {
-      currentIcon,
-      viewBox,
-      style,
-      paths,
-      svgProps,
-    };
+    return { iconData};
   },
 };
 </script>

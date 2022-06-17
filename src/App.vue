@@ -1,8 +1,8 @@
 
 <template>
-  <icon icon="camera" :size="60" />
-  <icon icon="document" color="red" />
-  <icon icon="camera" />
+  <icon name="camera" :size="60" />
+  <icon name="document" color="red" :size="30" />
+  <icon name="camera" title="Camera" />
 </template>
 
 <script>

@@ -3,8 +3,6 @@
 [![npm](https://img.shields.io/npm/v/vue-icomoon?color=%234fc921)](https://www.npmjs.com/package/vue-icomoon)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
 
-**📦 Zero Dependencies**
-
 It makes it very simple to use SVG icons in your `Vue3` projects.
 
 ## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z)
@@ -43,6 +41,26 @@ Icon.vue
       name: {
         type: String,
         required: true,
+      },
+      title: {
+        type: String,
+        default: null,
+      },
+      size: {
+        type: Number,
+        default: 16,
+      },
+      disableFill: {
+        type: Boolean,
+        default: false,
+      },
+      removeInitialStyle: {
+        type: Boolean,
+        default: false,
+      },
+      style: {
+        type: Object,
+        default: {},
       },
     },
     setup(props) {
