@@ -112,3 +112,8 @@ iconList(iconSet);
   "bin1",
 ];
 ```
+
+### Related Links
+
+- [react-icomoon](https://github.com/aykutkardas/react-icomoon)
+- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon) (soon)
