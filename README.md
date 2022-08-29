@@ -1,12 +1,11 @@
-# vue-icomoon
+![Vue-Icomoon Logo](/banner.png)
 
 [![npm](https://img.shields.io/npm/v/vue-icomoon?color=%234fc921)](https://www.npmjs.com/package/vue-icomoon)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
 
 **📦 Zero Dependencies**
 
-With vue-icomoon you can easily use the icons you have selected or created in icomoon.
-
+It makes it very simple to use SVG icons in your `Vue3` projects.
 
 ## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z)
 
@@ -18,9 +17,9 @@ npm install vue-icomoon
 
 ## Usage
 
-You can use the icons you selected on IcoMoon by downloading the `selection.json` file.
+You can use the icons you selected on [IcoMoon](https://icomoon.io/app/) by downloading the `selection.json` file.
 
-https://icomoon.io/app/
+> You can try [svgps.app](https://svgps.app/) to generate `selection.json` file. 🎉
 
 ### Declare
 
@@ -41,7 +40,7 @@ Icon.vue
       Icomoon,
     },
     props: {
-      icon: {
+      name: {
         type: String,
         required: true,
       },
@@ -60,43 +59,33 @@ Icon.vue
 
 ```html
 <template>
-  <icon icon="camera" :size="50" color="#5096ec" />
+  <icon name="camera" :size="50" color="#5096ec" />
 </template>
 
 <script>
-import Icon from "./components/Icon/Icon.vue";
+  import Icon from "./components/Icon/Icon.vue";
 
-export default {
-  components: {
-    Icon,
-  },
-};
+  export default {
+    components: {
+      Icon,
+    },
+  };
 </script>
 ```
 
-
 ## Props List
 
-| Name              | Type          | Default   | Sample                        |
-| ----------------- | ------------- | --------- | ----------------------------- |
-| iconSet           | Object        | undefined | "selection.json file content" |
-| icon              | String        | undefined | "home"                        |
-| size              | Number,String | undefined | "1em", 10, "100px"            |
-| color             | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
-| style             | Object        | {...}     | { color: '#ff0'}              |
-| className         | String        | undefined | "icomoon"                     |
-| disableFill       | Boolean       | undefined | true                          |
+| Name               | Type          | Default   | Sample                        |
+| ------------------ | ------------- | --------- | ----------------------------- |
+| iconSet            | Object        | undefined | "selection.json file content" |
+| name               | String        | undefined | "home"                        |
+| size               | Number,String | undefined | "1em", 10, "100px"            |
+| color              | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
+| style              | Object        | {...}     | { color: '#ff0'}              |
+| title              | String        | undefined | "Icon Title"                  |
+| class              | String        | undefined | "icomoon"                     |
+| disableFill        | Boolean       | undefined | true                          |
 | removeInitialStyle | Boolean       | undefined | true                          |
-
-### Initial Style
-
-```js
-{
-  display: "inline-block",
-  stroke: "currentColor",
-  fill: "currentColor",
-}
-```
 
 ## iconList
 
@@ -123,3 +112,8 @@ iconList(iconSet);
   "bin1",
 ];
 ```
+
+### Related Links
+
+- [react-icomoon](https://github.com/aykutkardas/react-icomoon)
+- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon) (soon)
