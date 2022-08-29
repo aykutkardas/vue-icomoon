@@ -27,7 +27,7 @@ Icon.vue
 
 ```html
 <template>
-  <icomoon :iconSet="iconSet" v-bind="props" />
+  <icomoon :iconSet="iconSet" v-bind="$props" />
 </template>
 
 <script>
@@ -36,18 +36,9 @@ Icon.vue
 
   export default {
     name: "Icon",
-    components: {
-      Icomoon,
-    },
-    props: {
-      name: {
-        type: String,
-        required: true,
-      },
-    },
-    setup(props) {
+    components: { Icomoon },
+    setup() {
       return {
-        props,
         iconSet,
       };
     },
@@ -66,9 +57,7 @@ Icon.vue
   import Icon from "./components/Icon/Icon.vue";
 
   export default {
-    components: {
-      Icon,
-    },
+    components: { Icon },
   };
 </script>
 ```
@@ -116,4 +105,5 @@ iconList(iconSet);
 ### Related Links
 
 - [react-icomoon](https://github.com/aykutkardas/react-icomoon)
-- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon) (soon)
+- [preact-icomoon](https://github.com/aykutkardas/preact-icomoon)
+- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon)
