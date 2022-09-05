@@ -30,7 +30,7 @@ export default {
       default: "",
     },
     size: {
-      type: Number,
+      type: [String, Number],
       default: 16,
     },
     disableFill: {
