@@ -1,6 +1,11 @@
 <template>
   <svg v-if="currentIcon" :viewBox="viewBox" :style="style" v-bind="svgProps">
-    <path v-for="path in paths" :d="path.d" />
+    <path
+      v-for="({ d, ...attrs }, index) in paths"
+      :d="d"
+      :key="index"
+      v-bind="attrs"
+    />
     <title v-if="title">{{ title }}</title>
   </svg>
 </template>
