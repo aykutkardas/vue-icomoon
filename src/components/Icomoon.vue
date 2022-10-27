@@ -76,7 +76,7 @@ export default {
     if (!currentIcon) return {};
 
     const { width = "1024" } = currentIcon.icon;
-    
+
     const viewBox = `0 0 ${width} 1024`;
 
     const style = {
@@ -89,7 +89,9 @@ export default {
     }
 
     const paths = currentIcon.icon.paths.map((path, index) => {
-      const attrs = currentIcon.icon.attrs?.[index];
+      const attrs = currentIcon.icon.attrs
+        ? currentIcon.icon.attrs[index]
+        : null;
 
       const pathProps = {
         d: path,
