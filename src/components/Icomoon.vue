@@ -1,5 +1,10 @@
 <template>
-  <svg v-if="currentIcon" :viewBox="viewBox" :style="style" v-bind="svgProps">
+  <svg
+    v-if="currentIcon"
+    :viewBox="viewBox"
+    :style="style"
+    v-bind="{ style, color }"
+  >
     <path
       v-for="({ d, ...attrs }, index) in paths"
       :d="d"
@@ -11,6 +16,8 @@
 </template>
 
 <script>
+import { computed, ref, toRefs, watchEffect } from "vue";
+
 export default {
   name: "Icomoon",
   props: {
@@ -51,62 +58,68 @@ export default {
       default: {},
     },
   },
-  setup({
-    iconSet,
-    icon,
-    name,
-    size,
-    title,
-    disableFill,
-    removeInitialStyle,
-    ...svgProps
-  }) {
+  setup(props) {
+    const {
+      iconSet,
+      icon,
+      name,
+      size,
+      title,
+      disableFill,
+      removeInitialStyle,
+    } = toRefs(props);
+
     const initialStyle = {
       display: "inline-block",
       stroke: "currentColor",
       fill: "currentColor",
     };
 
-    const iconName = icon || name;
+    const iconName = computed(() => icon.value || name.value);
 
-    const currentIcon = iconSet.icons.find(
-      (item) => item.properties.name === iconName
+    const currentIcon = computed(() =>
+      iconSet.value.icons.find(
+        (item) => item.properties.name === iconName.value
+      )
     );
 
-    if (!currentIcon) return {};
+    if (!currentIcon.value) return {};
 
-    const { width = "1024" } = currentIcon.icon;
+    const viewBox = computed(
+      () => `0 0 ${currentIcon.value.icon.width || "1024"} 1024`
+    );
 
-    const viewBox = `0 0 ${width} 1024`;
-
-    const style = {
-      ...(removeInitialStyle ? {} : initialStyle),
-    };
-
-    if (size) {
-      style.width = size;
-      style.height = size;
-    }
-
-    const paths = currentIcon.icon.paths.map((path, index) => {
-      const attrs = currentIcon.icon.attrs
-        ? currentIcon.icon.attrs[index]
-        : null;
-
-      const pathProps = {
-        d: path,
-        ...(!disableFill && attrs ? attrs : {}),
-      };
-
-      return pathProps;
+    const style = ref({
+      ...(removeInitialStyle.value ? {} : initialStyle),
     });
+
+    watchEffect(() => {
+      if (size.value) {
+        style.value.width = size.value;
+        style.value.height = size.value;
+      }
+    });
+
+    const paths = computed(() =>
+      currentIcon.value.icon.paths.map((path, index) => {
+        const attrs = currentIcon.value.icon.attrs
+          ? currentIcon.value.icon.attrs[index]
+          : null;
+
+        const pathProps = {
+          d: path,
+          ...(!disableFill.value && attrs ? attrs : {}),
+        };
+
+        return pathProps;
+      })
+    );
 
     return {
       currentIcon,
       viewBox,
       style,
       paths,
-      svgProps,
     };
   },
 };

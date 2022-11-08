@@ -2,9 +2,10 @@ import { AllowedComponentProps, ComponentCustomProps, VNodeProps } from "vue";
 
 export interface IcomoonProps {
   iconSet: Record<any, any>;
-  icon: string;
+  icon?: string;
+  name: string;
   color?: string;
-  size?: number;
+  size?: number | string;
   disableFill?: boolean;
   removeInitialStyle?: boolean;
   style?: Record<any, any>;
@@ -12,7 +13,10 @@ export interface IcomoonProps {
 
 export declare const Icomoon: {
   new (): {
-    $props: AllowedComponentProps & ComponentCustomProps & VNodeProps & IcomoonProps;
+    $props: AllowedComponentProps &
+      ComponentCustomProps &
+      VNodeProps &
+      IcomoonProps;
   };
 };
 
