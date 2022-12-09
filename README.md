@@ -72,6 +72,7 @@ Icon.vue
 | color              | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
 | style              | Object        | {...}     | { color: '#ff0'}              |
 | title              | String        | undefined | "Icon Title"                  |
+| titleId            | String        | undefined | "icon-d1a312d1'               |
 | class              | String        | undefined | "icomoon"                     |
 | disableFill        | Boolean       | undefined | true                          |
 | removeInitialStyle | Boolean       | undefined | true                          |
