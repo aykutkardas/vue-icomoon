@@ -1,13 +1,14 @@
 ![Vue-Icomoon Logo](/banner.png)
 
 [![npm](https://img.shields.io/npm/v/vue-icomoon?color=%234fc921)](https://www.npmjs.com/package/vue-icomoon)
+![npm](https://img.shields.io/npm/dm/vue-icomoon)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
 
 **📦 Zero Dependencies**
 
 It makes it very simple to use SVG icons in your `Vue3` projects.
 
-## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z)
+## [Demo](https://codesandbox.io/s/vue-icomoon-demo-nqb0z) - [Buy Me a Coffee](https://www.buymeacoffee.com/aykutkardas)
 
 ## Install
 
@@ -17,9 +18,9 @@ npm install vue-icomoon
 
 ## Usage
 
-You can use the icons you selected on [IcoMoon](https://icomoon.io/app/) by downloading the `selection.json` file.
+#### You can use [svgps.app](https://svgps.app/) to access over `40,000` free icons and convert your own icons into `selection.json`.
 
-> You can try [svgps.app](https://svgps.app/) to generate `selection.json` file. 🎉
+Or you can use [IcoMoon](https://icomoon.io/app/) to generate the `selection.json` file.
 
 ### Declare
 
